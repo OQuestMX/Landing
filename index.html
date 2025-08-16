@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- SEO y Metadatos -->
   <title>Eduardo Taylor Elizondo — Consultoría para navegar la complejidad</title>
   <meta name="description" content="Consultoría estratégica en Monterrey. Aplico marcos de complejidad como Cynefin y Wardley Maps para resolver problemas organizacionales y desarrollar talento.">
   <link rel="canonical" href="https://tudominio.mx/">
@@ -20,12 +21,12 @@
   <meta property="og:locale" content="es_MX">
 
   <!-- CSP (permite inline para este prototipo) -->
-  <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32" />
 
+  <!-- Estilos CSS -->
   <style>
     :root{
       --white:#FFFFFF; --background-alt:#f0f4f8; --text:#111111;
@@ -37,157 +38,186 @@
       --font-bismarck-title:"Palatino Linotype","Book Antiqua",Palatino,serif;
       --bismarck-accent:#c5a880; --bismarck-text-light:#e0dace;
     }
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:56px}
-    body{background-color:var(--white);color:var(--text);font-family:var(--font-family-sans);margin:0;line-height:1.7}
-    body.modal-open{overflow:hidden}
-    body::after{content:"";position:fixed;inset:0;width:100vw;height:100vh;background:repeating-linear-gradient(0deg,rgba(0,0,0,.05),rgba(0,0,0,.05) 1px,transparent 1px,transparent 2px);pointer-events:none;z-index:999}
-    .container{max-width:960px;margin:0 auto;padding:0 20px}
-    section{padding:64px 20px;border-bottom:1px solid var(--lines-borders)}
-    main>section:nth-of-type(even){background-color:var(--background-alt)}
-    h1,h2,h3,h4{margin:0 0 1rem;line-height:1.2;color:var(--blue);font-family:var(--font-family-mono)}
-    h1{font-size:2.2rem} h2{font-size:1.5rem} h3{font-size:1.15rem} h4{font-size:1rem;color:var(--text)}
-    a{color:var(--blue);text-decoration:underline;text-decoration-thickness:1px;transition:color .2s,text-decoration-color .2s,text-decoration-thickness .2s}
-    a:hover,a:focus-visible{color:var(--blue-hover);text-decoration-color:var(--blue-hover);text-decoration-thickness:2px;outline:none}
 
-    /* Header */
-    .site-header{background:var(--white);border-bottom:2px solid var(--text);height:56px;position:sticky;top:0;z-index:1000}
-    .header-container{display:flex;justify-content:space-between;align-items:center;height:100%;gap:20px}
-    .logo a{font-size:1.25rem;font-weight:700;text-decoration:none;color:var(--text);font-family:var(--font-family-mono);line-height:1.2}
-    .main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:16px;flex-shrink:0}
-    .main-nav a{text-decoration:none;position:relative;padding-bottom:4px;font-family:var(--font-family-mono)}
-    .main-nav a::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--retro-accent);transform:scaleX(0);transform-origin:left;transition:transform .3s ease-in-out}
-    .main-nav a:hover::after,.main-nav a:focus-visible::after{transform:scaleX(1)}
-    #bismarck-nav-link{border:1px solid var(--bismarck-accent);color:var(--bismarck-accent);padding:2px 6px;border-radius:2px}
+    *, *::before, *::after { box-sizing: border-box; }
 
-    .page-wrapper{transition:opacity .3s ease-in-out}
-    .page-wrapper.hidden{display:none}
+    html { scroll-behavior: smooth; scroll-padding-top: 56px; }
 
-    /* Hero */
-    #quien-soy{padding-top:48px;padding-bottom:48px}
-    .intro-layout{display:flex;flex-direction:column;gap:48px}
-    .intro-title-area{flex:1}.intro-bio-area{flex:1.5}
-    #hero-title{position:relative;min-height:1.2em}
-    #hero-title.typing::after{content:"▌";position:absolute;right:-.2em;color:var(--blue);animation:blink 1s step-end infinite}
-    .subtitle{font-size:1.1rem;color:var(--text);margin-top:.5rem;max-width:40ch}
-    .separator{width:100%;height:2px;margin-top:2rem;background:linear-gradient(90deg,var(--retro-accent),transparent,var(--blue))}
-    @keyframes blink{50%{opacity:0}}
-    .section-title{margin-bottom:24px}
-    .section-title::after{content:"▌";display:inline-block;margin-left:8px;color:var(--blue);animation:blink 1s step-end infinite}
-    .quien-soy-content-simplified{font-size:1.1rem}
-    .footnote-ref{font-family:var(--font-family-sans);font-weight:700;color:var(--retro-accent);cursor:help;text-decoration:underline dotted}
+    body {
+      background-color: var(--white);
+      color: var(--text);
+      font-family: var(--font-family-sans);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    body.modal-open { overflow: hidden; }
+
+    body::after {
+      content: "";
+      position: fixed; inset: 0;
+      width: 100vw; height: 100vh;
+      background: repeating-linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05) 1px, transparent 1px, transparent 2px);
+      pointer-events: none;
+      z-index: 100; /* debajo del modal */
+    }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    section { padding: 64px 20px; border-bottom: 1px solid var(--lines-borders); }
+
+    main > section:nth-of-type(even) { background-color: var(--background-alt); }
+
+    h1, h2, h3, h4 { margin: 0 0 1rem; line-height: 1.2; color: var(--blue); font-family: var(--font-family-mono); }
+    h1 { font-size: 2.2rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.15rem; } h4 { font-size: 1rem; color: var(--text); }
+
+    a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; transition: color .2s, text-decoration-color .2s, text-decoration-thickness .2s; }
+    a:hover, a:focus-visible { color: var(--blue-hover); text-decoration-color: var(--blue-hover); text-decoration-thickness: 2px; outline: none; }
+
+    /* Header y Navegación */
+    .site-header { background-color: var(--white); border-bottom: 2px solid var(--text); height: 56px; position: sticky; top: 0; z-index: 1000; }
+    .header-container { display: flex; justify-content: space-between; align-items: center; height: 100%; gap: 20px; }
+    .logo a { font-size: 1.25rem; font-weight: bold; text-decoration: none; color: var(--text); font-family: var(--font-family-mono); line-height: 1.2; }
+    .main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; flex-shrink: 0; }
+    .main-nav a { text-decoration: none; position: relative; padding-bottom: 4px; font-family: var(--font-family-mono); }
+    .main-nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: var(--retro-accent); transform: scaleX(0); transform-origin: left; transition: transform .3s ease-in-out; }
+    .main-nav a:hover::after, .main-nav a:focus-visible::after { transform: scaleX(1); }
+    #bismarck-nav-link { border: 1px solid var(--bismarck-accent); color: var(--bismarck-accent); padding: 2px 6px; border-radius: 2px; }
+
+    .page-wrapper { transition: opacity .3s ease-in-out; }
+    .page-wrapper.hidden { display: none; }
+
+    /* Hero / Quién Soy */
+    #quien-soy { padding-top: 48px; padding-bottom: 48px; }
+    .intro-layout { display: flex; flex-direction: column; gap: 48px; }
+    .intro-title-area { flex: 1; }
+    .intro-bio-area { flex: 1.5; }
+    #hero-title { position: relative; min-height: 1.2em; }
+    #hero-title.typing::after { content: '▌'; position: absolute; right: -0.2em; color: var(--blue); animation: blink 1s step-end infinite; }
+    .intro-title-area .subtitle { font-size: 1.1rem; color: var(--text); margin-top: 0.5rem; max-width: 40ch; }
+    .separator { width: 100%; height: 2px; margin-top: 2rem; background: linear-gradient(90deg, var(--retro-accent), transparent, var(--blue)); }
+    @keyframes blink { 50% { opacity: 0; } }
+    .section-title { margin-bottom: 24px; }
+    .section-title::after { content: '▌'; display: inline-block; margin-left: 8px; color: var(--blue); animation: blink 1s step-end infinite; }
+    .quien-soy-content-simplified { font-size: 1.1rem; }
+    .footnote-ref { font-weight: bold; color: var(--retro-accent); cursor: help; text-decoration: underline dotted; }
 
     /* Footnotes */
-    .footnotes-section{background:var(--text);color:var(--white);position:sticky;bottom:0;z-index:500;padding:16px 20px;min-height:80px;border-top:2px solid var(--retro-accent)}
-    .footnotes-section h4{color:var(--white)}
-    .footnote-display{font-family:var(--font-family-mono);color:var(--blue-soft);min-height:1.5em;transition:color .2s}
-    .footnote-display:empty::before{content:"Pasa el cursor o enfoca un número para ver la nota...";color:var(--lines-borders);opacity:.7}
+    .footnotes-section { background-color: var(--text); color: var(--white); position: sticky; bottom: 0; z-index: 500; padding: 16px 20px; min-height: 80px; border-top: 2px solid var(--retro-accent); }
+    .footnotes-section h4 { color: var(--white); }
+    .footnote-display { font-family: var(--font-family-mono); color: var(--blue-soft); min-height: 1.5em; transition: color .2s; }
+    .footnote-display:empty::before { content: "Pasa el cursor o enfoca un número para ver la nota..."; color: var(--lines-borders); opacity: 0.7; }
 
-    /* Servicios */
-    .services-layout{display:flex;flex-direction:column;gap:32px;margin-top:24px}
-    .services-menu{list-style:none;padding:0;margin:0;flex-shrink:0}
-    .services-menu li a{display:block;padding:12px 16px;text-decoration:none;font-family:var(--font-family-mono);border:1px solid transparent;border-left:3px solid var(--lines-borders);transition:all .2s ease-out}
-    .services-menu li a:hover{background:var(--blue-soft);border-left-color:var(--blue-hover)}
-    .services-menu li a.active{background:var(--white);border-color:var(--lines-borders);border-left-color:var(--retro-accent);box-shadow:2px 2px 0 var(--lines-borders);transform:translateX(4px)}
-    .service-panel{background:var(--white);border:1px solid var(--lines-borders);padding:24px;min-height:300px;opacity:0;transform:translateX(20px);transition:opacity .4s ease,transform .4s ease}
-    .service-panel.active{opacity:1;transform:translateX(0)}
-    .service-panel-content ul{padding-left:20px}
-    .service-panel-content h3{margin-top:0}
+    /* Lo Que Hago */
+    .services-layout { display: flex; flex-direction: column; gap: 32px; margin-top: 24px; }
+    .services-menu { list-style: none; padding: 0; margin: 0; flex-shrink: 0; }
+    .services-menu li a { display: block; padding: 12px 16px; text-decoration: none; font-family: var(--font-family-mono); border: 1px solid transparent; border-left: 3px solid var(--lines-borders); transition: all .2s ease-out; }
+    .services-menu li a:hover { background-color: var(--blue-soft); border-left-color: var(--blue-hover); }
+    .services-menu li a.active { background-color: var(--white); border-color: var(--lines-borders); border-left-color: var(--retro-accent); box-shadow: 2px 2px 0 var(--lines-borders); transform: translateX(4px); }
+    .service-panel { background-color: var(--white); border: 1px solid var(--lines-borders); padding: 24px; min-height: 300px; opacity: 0; transform: translateX(20px); transition: opacity .4s ease, transform .4s ease; }
+    .service-panel.active { opacity: 1; transform: translateX(0); }
+    .service-panel[aria-live="polite"] { outline: none; }
+    .service-panel-content ul { padding-left: 20px; }
+    .service-panel-content h3 { margin-top: 0; }
 
     /* Contacto */
-    .contact-layout{display:flex;gap:24px;margin-top:24px}
-    .contact-icon-area{flex:0 0 20%;display:flex;justify-content:center;align-items:center;border-right:1px solid var(--lines-borders);padding-right:24px}
-    .contact-icon-link svg{width:60px;height:auto;fill:var(--lines-borders);transition:fill .2s ease,transform .2s ease}
-    .contact-icon-link:hover svg{fill:var(--retro-accent);transform:scale(1.05)}
-    .contact-form-wrapper{flex:1 1 80%}
-    #contact-form{display:grid;gap:16px 24px;grid-template-areas:"name email" "message message" "verticals verticals" "actions actions"}
-    .form-group{margin:0}
-    .form-group-name{grid-area:name}
-    .form-group-email{grid-area:email}
-    .form-group-message{grid-area:message}
-    .form-group-verticals{grid-area:verticals}
-    .form-actions{grid-area:actions;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-    .form-group label{display:block;margin-bottom:.5rem;font-weight:700}
-    .form-group input,.form-group textarea{width:100%;padding:8px;font-family:var(--font-family-mono);border:1px solid var(--lines-borders);background:var(--white);color:var(--text);font-size:1rem}
-    .form-group input:focus-visible,.form-group textarea:focus-visible{outline:2px solid var(--retro-accent);outline-offset:1px;border-color:var(--retro-accent)}
-    .checkbox-grid{display:flex;flex-wrap:wrap;gap:8px 16px;padding-top:8px}
-    .checkbox-item{display:flex;align-items:center}
-    .checkbox-item input[type="checkbox"]{margin-right:8px;width:16px;height:16px;accent-color:var(--blue)}
-    .checkbox-item label{margin-bottom:0;font-weight:400}
-    .btn{padding:10px 16px;font-family:var(--font-family-mono);font-size:1rem;border:2px solid var(--text);cursor:pointer;transition:all .2s;box-shadow:2px 2px 0 var(--text);text-decoration:none;display:inline-block}
-    .btn:hover,.btn:focus-visible{box-shadow:4px 4px 0 var(--text);transform:translate(-1px,-1px)}
-    .btn:active{box-shadow:0 0 0 var(--text);transform:translate(2px,2px)}
-    .btn-primary{background:var(--blue);color:var(--white)}
-    .btn-ghost{background:transparent;color:var(--blue);border-color:var(--blue)}
+    .contact-layout { display: flex; gap: 24px; margin-top: 24px; }
+    .contact-icon-area { flex: 0 0 20%; display: flex; justify-content: center; align-items: center; border-right: 1px solid var(--lines-borders); padding-right: 24px; }
+    .contact-icon-link svg { width: 60px; height: auto; fill: var(--lines-borders); transition: fill .2s ease, transform .2s ease; }
+    .contact-icon-link:hover svg { fill: var(--retro-accent); transform: scale(1.05); }
+    .contact-form-wrapper { flex: 1 1 80%; }
+    #contact-form { display: grid; gap: 16px 24px; grid-template-areas: "name email" "message message" "verticals verticals" "actions actions"; }
+    .form-group { margin: 0; }
+    .form-group-name { grid-area: name; }
+    .form-group-email { grid-area: email; }
+    .form-group-message { grid-area: message; }
+    .form-group-verticals { grid-area: verticals; }
+    .form-actions { grid-area: actions; }
+    .form-group label { display: block; margin-bottom: .5rem; font-weight: bold; }
+    .form-group input, .form-group textarea { width: 100%; padding: 8px; font-family: var(--font-family-mono); border: 1px solid var(--lines-borders); background-color: var(--white); color: var(--text); font-size: 1rem; }
+    .form-group input:focus-visible, .form-group textarea:focus-visible { outline: 2px solid var(--retro-accent); outline-offset: 1px; border-color: var(--retro-accent); }
+    .checkbox-grid { display: flex; flex-wrap: wrap; gap: 8px 16px; padding-top: 8px; }
+    .checkbox-item { display: flex; align-items: center; }
+    .checkbox-item input[type="checkbox"]{ margin-right: 8px; width: 16px; height: 16px; accent-color: var(--blue); }
+    .checkbox-item label { margin-bottom: 0; font-weight: normal; }
+    .form-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn { padding: 10px 16px; font-family: var(--font-family-mono); font-size: 1rem; border: 2px solid var(--text); cursor: pointer; transition: all .2s; box-shadow: 2px 2px 0 var(--text); text-decoration: none; display: inline-block; }
+    .btn:hover, .btn:focus-visible { box-shadow: 4px 4px 0 var(--text); transform: translate(-1px,-1px); }
+    .btn:active { box-shadow: 0 0 0 var(--text); transform: translate(2px,2px); }
+    .btn-primary { background-color: var(--blue); color: var(--white); }
+    .btn-ghost { background-color: transparent; color: var(--blue); border-color: var(--blue); }
 
     /* Footer */
-    .site-footer-main{padding:24px 0;background:var(--background-alt);border-bottom:0}
-    .footer-content{display:flex;justify-content:center;align-items:center}
+    .site-footer-main { padding: 24px 0; background-color: var(--background-alt); border-bottom: 0; }
+    .footer-content { display: flex; justify-content: center; align-items: center; }
 
     /* Modal genérico */
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,.2);display:flex;justify-content:center;align-items:center;z-index:2000;opacity:0;pointer-events:none;transition:opacity .3s ease-in-out}
-    .modal.active{opacity:1;pointer-events:auto}
-    .modal-content{background:var(--background-alt);padding:32px;border:2px solid var(--text);box-shadow:8px 8px 0 var(--retro-accent);max-width:600px;width:90%;max-height:80vh;overflow-y:auto;position:relative}
-    .modal-close-btn{position:absolute;top:10px;right:10px;background:none;border:none;font-family:var(--font-family-mono);font-size:1.5rem;cursor:pointer;color:var(--text)}
-    .modal-body h3{margin-top:0}.modal-body ul{padding-left:20px}
+    .modal { position: fixed; inset: 0; background-color: rgba(0,0,0,0.2); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity .3s ease-in-out; }
+    .modal.active { opacity: 1; pointer-events: auto; }
+    .modal-content { background-color: var(--background-alt); padding: 32px; border: 2px solid var(--text); box-shadow: 8px 8px 0 var(--retro-accent); max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; }
+    .modal-close-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; font-family: var(--font-family-mono); font-size: 1.5rem; cursor: pointer; color: var(--text); }
+    .modal-body h3 { margin-top: 0; }
+    .modal-body ul { padding-left: 20px; }
 
     /* Bismarck */
-    #bismarck-page{background:#1a1a1a;color:var(--bismarck-text-light);font-family:var(--font-bismarck-body);min-height:100vh;position:relative;padding-left:180px}
-    #bismarck-page h3,#bismarck-page h4,#bismarck-page h5{font-family:var(--font-bismarck-title);color:#fff}
-    #bismarck-page h3{font-size:2.5rem;margin-bottom:.5rem}
-    #bismarck-page h4{font-size:1.1rem;border-bottom:1px solid var(--lines-borders);padding-bottom:8px;margin-bottom:16px}
-    #bismarck-page h5{font-size:1rem;margin-bottom:.5rem}
-    .bismarck-subtitle{font-style:italic;margin:0 0 2rem;opacity:.8}
-    #bismarck-page p,#bismarck-page li,#bismarck-page blockquote{font-size:1.1rem;line-height:1.8}
-    .bismarck-tabs{position:fixed;top:0;left:0;height:100vh;width:180px;background:#111;border-right:2px solid var(--bismarck-accent);display:flex;flex-direction:column;justify-content:center;z-index:10}
-    .bismarck-tab{background:transparent;border:none;color:var(--bismarck-text-light);padding:15px;cursor:pointer;transition:background-color .2s,color .2s;font-family:var(--font-bismarck-title);display:flex;align-items:center;gap:10px}
-    .bismarck-tab.active,.bismarck-tab:hover{background:var(--bismarck-accent);color:#fff}
-    .bismarck-tab svg{width:24px;height:24px;fill:currentColor}
-    .bismarck-tab:focus-visible,.main-nav a:focus-visible{outline:3px solid var(--retro-accent);outline-offset:2px}
-    .bismarck-panel-container{position:relative;min-height:100vh}
-    .bismarck-panel{position:absolute;inset:0;width:100%;height:100%;padding:3rem;opacity:0;pointer-events:none;transform:translateX(-20px);transition:opacity .4s ease,transform .4s ease;overflow-y:auto}
-    .bismarck-panel.active{opacity:1;pointer-events:auto;transform:translateX(0)}
-    .bismarck-gallery-image{width:100%;max-width:400px;height:auto;border:2px solid var(--bismarck-text-light);cursor:pointer;display:block;margin:0 auto}
-    .bismarck-gallery-caption{font-size:.9rem;text-align:center;margin-top:8px;font-style:italic}
-    .bismarck-book-item{border-bottom:1px solid var(--lines-borders);padding-bottom:1rem;margin-bottom:1rem}
-    .bismarck-book-item:last-child{border-bottom:none}
-    .bismarck-book-title{font-weight:700;color:var(--bismarck-text-light)}
-    .bismarck-book-author{font-size:.9rem;opacity:.8;display:block;margin-bottom:.5rem}
-    .bismarck-book-quote{font-style:italic;border-left:2px solid var(--bismarck-accent);padding-left:1rem;margin-top:1rem}
+    #bismarck-page { background-color: #1a1a1a; color: var(--bismarck-text-light); font-family: var(--font-bismarck-body); min-height: 100vh; position: relative; padding-left: 180px; }
+    #bismarck-page h3, #bismarck-page h4, #bismarck-page h5 { font-family: var(--font-bismarck-title); color: #fff; }
+    #bismarck-page h3 { font-size: 2.5rem; margin-bottom: .5rem; }
+    #bismarck-page h4 { font-size: 1.1rem; border-bottom: 1px solid var(--lines-borders); padding-bottom: 8px; margin-bottom: 16px; }
+    #bismarck-page h5 { font-size: 1rem; margin-bottom: .5rem; }
+    .bismarck-subtitle { font-style: italic; margin: 0 0 2rem; opacity: .8; }
+    #bismarck-page p, #bismarck-page li, #bismarck-page blockquote { font-size: 1.1rem; line-height: 1.8; }
+    .bismarck-tabs { position: fixed; top: 0; left: 0; height: 100vh; width: 180px; background-color: #111; border-right: 2px solid var(--bismarck-accent); display: flex; flex-direction: column; justify-content: center; z-index: 10; }
+    .bismarck-tab { background: transparent; border: none; color: var(--bismarck-text-light); padding: 15px; cursor: pointer; transition: background-color .2s, color .2s; font-family: var(--font-bismarck-title); display: flex; align-items: center; gap: 10px; }
+    .bismarck-tab.active, .bismarck-tab:hover { background: var(--bismarck-accent); color: #fff; }
+    .bismarck-tab svg { width: 24px; height: 24px; fill: currentColor; }
+    .bismarck-panel-container { position: relative; min-height: 100vh; }
+    .bismarck-panel { position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 3rem; opacity: 0; pointer-events: none; transform: translateX(-20px); transition: opacity .4s ease, transform .4s ease; overflow-y: auto; }
+    .bismarck-panel.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
+    .bismarck-gallery-image { width: 100%; max-width: 400px; height: auto; border: 2px solid var(--bismarck-text-light); cursor: pointer; display: block; margin: 0 auto; }
+    .bismarck-gallery-caption { font-size: .9rem; text-align: center; margin-top: 8px; font-style: italic; }
+    .bismarck-book-item { border-bottom: 1px solid var(--lines-borders); padding-bottom: 1rem; margin-bottom: 1rem; }
+    .bismarck-book-item:last-child { border-bottom: none; }
+    .bismarck-book-item .bismarck-book-title { font-weight: bold; color: var(--bismarck-text-light); }
+    .bismarck-book-item .bismarck-book-author { font-size: .9rem; opacity: .8; display: block; margin-bottom: .5rem; }
+    .bismarck-book-quote { font-style: italic; border-left: 2px solid var(--bismarck-accent); padding-left: 1rem; margin-top: 1rem; }
+    .bismarck-panel a { color: var(--bismarck-accent); text-decoration: none; border-bottom: 1px dotted var(--bismarck-accent); }
+    .bismarck-panel a:hover { color: var(--bismarck-text-light); }
 
     /* Modal imagen fullscreen */
-    #image-modal{background:rgba(0,0,0,.85)}
-    #image-modal .modal-content{background:none;border:none;box-shadow:none;width:100%;height:100%;display:flex;justify-content:center;align-items:center;padding:2rem}
-    #image-modal img{max-width:100%;max-height:100%;object-fit:contain}
-    #image-modal .modal-close-btn{color:#fff;font-size:2.5rem;text-shadow:0 0 5px #000}
+    #image-modal { background-color: rgba(0,0,0,0.85); }
+    #image-modal .modal-content { background: none; border: none; box-shadow: none; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; padding: 2rem; }
+    #image-modal img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    #image-modal .modal-close-btn { color: white; font-size: 2.5rem; text-shadow: 0 0 5px black; }
 
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
     /* Responsive */
-    @media (max-width:720px){
-      .contact-layout{flex-direction:column}
-      .contact-icon-area{border-right:none;border-bottom:1px solid var(--lines-borders);padding-right:0;padding-bottom:24px}
-      #contact-form{grid-template-areas:"name" "email" "message" "verticals" "actions"}
-      #bismarck-page{padding-left:0}
-      .bismarck-tabs{position:relative;width:100%;height:auto;flex-direction:row;justify-content:center;border-right:none;border-bottom:2px solid var(--bismarck-accent)}
-      .bismarck-tab span{display:none}
+    @media (max-width: 720px) {
+      .contact-layout { flex-direction: column; }
+      .contact-icon-area { border-right: none; border-bottom: 1px solid var(--lines-borders); padding-right: 0; padding-bottom: 24px; }
+      #contact-form { grid-template-areas: "name" "email" "message" "verticals" "actions"; }
+      #bismarck-page { padding-left: 0; }
+      .bismarck-tabs { position: relative; width: 100%; height: auto; flex-direction: row; justify-content: center; border-right: none; border-bottom: 2px solid var(--bismarck-accent); }
+      .bismarck-tab { writing-mode: horizontal-tb; transform: none; }
+      .bismarck-tab span { display: none; }
     }
-    @media (max-width:600px){
-      .logo a{font-size:1rem}
-      .main-nav ul{gap:10px}
-      .main-nav a{font-size:.9rem}
+    @media (max-width: 600px) {
+      .logo a { font-size: 1rem; }
+      .main-nav ul { gap: 10px; }
+      .main-nav a { font-size: .9rem; }
     }
-    @media (min-width:720px){
-      .main-nav ul{gap:24px}
-      .services-layout{flex-direction:row;align-items:flex-start}
-      .services-menu{width:300px}
-      .service-panel{flex-grow:1}
-      .intro-layout{flex-direction:row;align-items:flex-start}
+    @media (min-width: 720px) {
+      .main-nav ul { gap: 24px; }
+      .services-layout { flex-direction: row; align-items: flex-start; }
+      .services-menu { width: 300px; }
+      .service-panel { flex-grow: 1; }
+      .intro-layout { flex-direction: row; align-items: flex-start; }
     }
 
     /* Reduce motion */
-    @media (prefers-reduced-motion:reduce){
-      *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
     }
   </style>
 </head>
@@ -264,11 +294,11 @@
             <form id="contact-form" novalidate>
               <div class="form-group form-group-name">
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" required autocomplete="name">
+                <input type="text" id="nombre" name="nombre" required autocomplete="name" maxlength="120">
               </div>
               <div class="form-group form-group-email">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required autocomplete="email" inputmode="email">
+                <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" maxlength="254">
               </div>
               <div class="form-group form-group-message">
                 <label for="mensaje">Mensaje (Opcional)</label>
@@ -337,6 +367,10 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5zm0-11C9.24 5.5 6.5 8.24 6.5 11.5c0 .63.1 1.24.29 1.81l-2.6 2.6c-.32.32-.32.85 0 1.17.16.16.37.24.59.24s.43-.08.59-.24l2.6-2.6C9.26 15.4 9.87 15.5 10.5 15.5c3.26 0 5.99-2.74 5.99-6s-2.73-6-5.99-6z"/></svg>
           <span>El Vinil</span>
         </button>
+        <button class="bismarck-tab" role="tab" aria-controls="panel-task-manager" aria-selected="false" data-bismarck-tab="task-manager">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+          <span>Task Manager</span>
+        </button>
       </nav>
 
       <div class="bismarck-panel-container">
@@ -378,17 +412,17 @@
             <li>Un "anti-MBA" que enseñe a hacer mejores preguntas.</li>
             <li>La "deuda organizacional" como partida contable.</li>
           </ul>
-          <h5 style="margin-top:2rem;">Iteraciones</h5>
+          <h5 style="margin-top: 2rem;">Iteraciones</h5>
           <p>Actualmente desarrollando un juego de rol (RPG) de mesa diseñado para el desarrollo de habilidades socioemocionales en equipos ejecutivos. Utiliza la narrativa y la toma de decisiones en un entorno de fantasía para revelar y entrenar la colaboración, la comunicación y el liderazgo en el mundo real.</p>
         </div>
 
         <div class="bismarck-panel" id="panel-poem" role="tabpanel" tabindex="0" data-bismarck-panel="poem">
           <h3>El Poema</h3>
           <h4>The Love Song of J. Alfred Prufrock</h4>
-          <blockquote style="font-style:italic;border-left:2px solid var(--bismarck-accent);padding-left:1rem;">
-            <p>No, no soy el príncipe Hamlet, ni estaba destinado a serlo;<br>soy un lord auxiliar, uno que servirá<br>para aumentar un cortejo, iniciar una escena o dos... <sup><span class="footnote-ref" data-footnote="17" tabindex="0">17</span></sup></p>
-            <p>¿Me atreveré a alterar el universo?<br>En un minuto hay tiempo para decisiones y revisiones<br>que un minuto revertirá. <sup><span class="footnote-ref" data-footnote="18" tabindex="0">18</span></sup></p>
-            <p>He medido mi vida con cucharillas de café... <sup><span class="footnote-ref" data-footnote="19" tabindex="0">19</span></sup></p>
+          <blockquote style="font-style: italic; border-left: 2px solid var(--bismarck-accent); padding-left: 1rem;">
+            <p>No, no soy el príncipe Hamlet, ni estaba destinado a serlo;<br>soy un lord auxiliar, uno que servirá<br>para aumentar un cortejo, iniciar una escena o dos...<sup><span class="footnote-ref" data-footnote="17" tabindex="0">17</span></sup></p>
+            <p>¿Me atreveré a alterar el universo?<br>En un minuto hay tiempo para decisiones y revisiones<br>que un minuto revertirá.<sup><span class="footnote-ref" data-footnote="18" tabindex="0">18</span></sup></p>
+            <p>He medido mi vida con cucharillas de café...<sup><span class="footnote-ref" data-footnote="19" tabindex="0">19</span></sup></p>
             <footer>— T.S. Eliot</footer>
           </blockquote>
         </div>
@@ -397,6 +431,11 @@
           <h3>El Vinil</h3>
           <h4>King Crimson - 21st Century Schizoid Man</h4>
           <p>La banda sonora perfecta para el colapso de la modernidad. Publicada en 1969, esta canción no es rock progresivo; es una crisis nerviosa de 7 minutos capturada en cinta. Con su caos instrumental, letras distópicas y agresión pura, encapsula la ansiedad de un mundo que se acelera más allá de su propia comprensión. Es el sonido de la complejidad volviéndose violenta.</p>
+        </div>
+
+        <div class="bismarck-panel" id="panel-task-manager" role="tabpanel" tabindex="0" data-bismarck-panel="task-manager">
+          <h3><a href="https://oquestmx.github.io/OfficeQuest1/" target="_blank" rel="noopener noreferrer">Task Manager (beta)</a></h3>
+          <p>Una herramienta en desarrollo para la gestión de proyectos y tareas basada en los principios de la complejidad.</p>
         </div>
       </div>
     </div>
@@ -409,7 +448,7 @@
     </section>
   </div>
 
-  <!-- Modal contenido -->
+  <!-- Modal / Pop-up Structure -->
   <div class="modal" id="main-modal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal-close-btn" aria-label="Cerrar">&times;</button>
@@ -419,7 +458,7 @@
     </div>
   </div>
 
-  <!-- Modal imagen fullscreen -->
+  <!-- Modal para Imagen Fullscreen -->
   <div class="modal" id="image-modal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
       <button class="modal-close-btn" aria-label="Cerrar">&times;</button>
@@ -427,8 +466,8 @@
     </div>
   </div>
 
-  <!-- Contenido oculto Notas al pie -->
-  <div id="footnote-contents" style="display:none">
+  <!-- Contenido para las Notas al Pie (oculto) -->
+  <div id="footnote-contents" style="display: none;">
     <p data-footnote="1">Relativo a la naturaleza del conocimiento (epistemología) y del ser (ontología). En la práctica, significa clasificar problemas según si sus causas son conocidas o desconocidas, para poder actuar en consecuencia.</p>
     <p data-footnote="2">Una formación en filosofía y literatura que aporta una capacidad (ojalá) superior para la síntesis y el pensamiento crítico, en contraste con el enfoque puramente instrumental de los negocios.</p>
     <p data-footnote="3">La habilidad de mover ideas desde el plano conceptual hasta la implementación, con una alta tolerancia a la experimentación y a la iteración en ciclos rápidos. La estrategia sin ejecución es alucinación.</p>
@@ -453,14 +492,14 @@
     <p data-footnote="22">El argumento de Berger de que no existe una forma "inocente" de ver. Cada acto de visión está mediado por nuestras suposiciones culturales, prejuicios y la historia del poder. Ver es un acto político.</p>
   </div>
 
-  <!-- Contenido oculto: Libro del momento -->
-  <div id="book-modal-content" style="display:none">
+  <!-- Contenido para el Modal "Libro del Momento" (oculto) -->
+  <div id="book-modal-content" style="display:none;">
     <h3>Libro del Momento: <em>¿Qué es la filosofía?</em></h3>
     <h4>Gilles Deleuze & Félix Guattari</h4>
     <p>Un manual de instrucciones para construir armas conceptuales que nadie, incluyéndote a ti mismo, sabrá cómo usar. Deleuze y Guattari no preguntan '¿Qué es la filosofía?' para obtener una respuesta, sino para desmantelar la pregunta hasta que solo queden fragmentos de alta velocidad—caos, cerebro y conceptos. La lectura es como un electroshock para el alma: dolorosa, probablemente innecesaria, pero te deja con la certeza de que <em>algo</em> ha cambiado. Ideal para cualquiera que sospeche que pensar no debería ser un acto confortable.</p>
   </div>
 
-  <!-- Contenido oculto: Servicios (para inyección) -->
+  <!-- Contenido oculto de servicios -->
   <div id="service-contents" style="display:none">
     <div id="service-1-content">
       <h3>Transformación y Complejidad</h3>
@@ -504,7 +543,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      /* Typewriter con preferencia de movimiento respetada */
+      /* Typewriter: respeta reduce-motion */
       const handleTypewriterEffect = () => {
         const el = document.getElementById('hero-title');
         if (!el) return;
@@ -513,18 +552,18 @@
         el.textContent = '';
         el.classList.add('typing');
         let i = 0;
-        const step = () => {
+        const type = () => {
           if (i < text.length) {
             el.textContent += text.charAt(i++);
-            setTimeout(step, media.matches ? 0 : 70);
+            setTimeout(type, media.matches ? 0 : 70);
           } else {
             el.classList.remove('typing');
           }
         };
-        setTimeout(step, media.matches ? 0 : 500);
+        setTimeout(type, media.matches ? 0 : 500);
       };
 
-      /* Notas al pie: mouse + teclado */
+      /* Notas al pie: mouse, teclado y touch */
       const handleFootnotes = () => {
         const mainDisplay = document.getElementById('footnote-display');
         const bismarckDisplay = document.getElementById('bismarck-footnote-display');
@@ -535,19 +574,17 @@
         const show = (key) => {
           const inBismarck = !document.getElementById('bismarck-page').classList.contains('hidden');
           const displayEl = inBismarck ? bismarckDisplay : mainDisplay;
-          if (displayEl && footnoteMap.has(key)) {
-            displayEl.innerHTML = `<strong>[${key}]</strong> ${footnoteMap.get(key)}`;
-          }
+          if (displayEl && footnoteMap.has(key)) displayEl.innerHTML = `<strong>[${key}]</strong> ${footnoteMap.get(key)}`;
         };
         const clear = () => {
           if (mainDisplay) mainDisplay.innerHTML = '';
           if (bismarckDisplay) bismarckDisplay.innerHTML = '';
         };
 
-        ['mouseover','focusin'].forEach(ev => {
+        ['mouseover','focusin','click','touchstart'].forEach(ev => {
           document.body.addEventListener(ev, e => {
             if (e.target.classList && e.target.classList.contains('footnote-ref')) show(e.target.dataset.footnote);
-          });
+          }, {passive:true});
         });
         ['mouseout','focusout'].forEach(ev => {
           document.body.addEventListener(ev, e => {
@@ -556,7 +593,7 @@
         });
       };
 
-      /* Servicios: inyección de contenido */
+      /* Servicios: inyecta contenido */
       const handleServicesPanel = () => {
         const menuItems = document.querySelectorAll('.services-menu a');
         const panel = document.querySelector('.service-panel');
@@ -569,6 +606,7 @@
             e.preventDefault();
             menuItems.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
+
             const targetId = item.dataset.serviceTarget + '-content';
             if (panel && serviceMap.has(targetId)) {
               panel.innerHTML = `<div class="service-panel-content">${serviceMap.get(targetId)}</div>`;
@@ -576,10 +614,11 @@
             }
           });
         });
+
         if (menuItems.length > 0) menuItems[0].click();
       };
 
-      /* Navegación principal vs Bismarck */
+      /* Navegación principal ↔ Bismarck sin duplicar listeners */
       let bismarckTabsInit = false;
       const handlePageNavigation = () => {
         const mainContent = document.getElementById('main-content');
@@ -597,6 +636,7 @@
           window.scrollTo(0, 0);
           if (!bismarckTabsInit) { handleBismarckTabs(); bismarckTabsInit = true; }
         };
+
         const showMain = () => {
           bismarckPage.classList.add('hidden');
           bismarckFootnotes.classList.add('hidden');
@@ -609,7 +649,7 @@
         bismarckBackBtn.addEventListener('click', (e) => { e.preventDefault(); showMain(); });
       };
 
-      /* Modal accesible */
+      /* Modal accesible con Escape y foco básico */
       const handleModal = () => {
         const mainModal = document.getElementById('main-modal');
         if (!mainModal) return;
@@ -621,22 +661,18 @@
           lastFocus = document.activeElement;
           mainModalBody.innerHTML = contentHTML;
           mainModal.classList.add('active');
-          mainModal.setAttribute('aria-hidden','false');
+          mainModal.setAttribute('aria-hidden', 'false');
           document.body.classList.add('modal-open');
-          const focusable = mainModal.querySelector('button, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])');
-          if (focusable) focusable.focus();
+          mainCloseBtn.focus();
 
-          const trap = (e) => {
-            if (e.key === 'Escape') { closeModal(); }
-            if (e.key === 'Tab') { e.preventDefault(); } // simple trap
-          };
+          const trap = (e) => { if (e.key === 'Escape') closeModal(); };
           mainModal.addEventListener('keydown', trap);
           mainModal._trap = trap;
         };
 
         const closeModal = () => {
           mainModal.classList.remove('active');
-          mainModal.setAttribute('aria-hidden','true');
+          mainModal.setAttribute('aria-hidden', 'true');
           document.body.classList.remove('modal-open');
           if (mainModal._trap) mainModal.removeEventListener('keydown', mainModal._trap);
           if (lastFocus) lastFocus.focus();
@@ -658,22 +694,36 @@
         const panels = document.querySelectorAll('.bismarck-panel');
 
         tabs.forEach(tab => {
-          tab.addEventListener('click', () => {
-            tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-            panels.forEach(p => p.classList.remove('active'));
-            tab.classList.add('active');
-            tab.setAttribute('aria-selected','true');
-            const targetPanel = document.querySelector(`.bismarck-panel[data-bismarck-panel="${tab.dataset.bismarckTab}"]`);
-            if (targetPanel) targetPanel.classList.add('active');
-          });
+          tab.setAttribute('role','tab');
+          tab.setAttribute('aria-selected','false');
+          const id = tab.dataset.bismarckTab;
+          tab.setAttribute('aria-controls', `panel-${id}`);
         });
-        if (tabs.length > 0) tabs[0].click();
+        panels.forEach(p => {
+          const id = p.getAttribute('data-bismarck-panel');
+          p.setAttribute('role','tabpanel');
+          p.id = `panel-${id}`;
+          p.setAttribute('tabindex','0');
+        });
+
+        const activate = (tab) => {
+          tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+          panels.forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected','true');
+          const target = document.querySelector(`.bismarck-panel[data-bismarck-panel="${tab.dataset.bismarckTab}"]`);
+          if (target) target.classList.add('active');
+        };
+
+        tabs.forEach(tab => tab.addEventListener('click', () => activate(tab)));
+        if (tabs.length) activate(tabs[0]);
       };
 
-      /* Modal de imagen */
+      /* Modal de imagen con Escape */
       const handleImageModal = () => {
         const imageModal = document.getElementById('image-modal');
         if (!imageModal) return;
+
         const imageEl = imageModal.querySelector('img');
         const closeBtn = imageModal.querySelector('.modal-close-btn');
 
@@ -686,21 +736,25 @@
             closeBtn.focus();
           }
         });
+
         const closeImageModal = () => {
           imageModal.classList.remove('active');
           imageModal.setAttribute('aria-hidden','true');
           document.body.classList.remove('modal-open');
         };
+
         closeBtn.addEventListener('click', closeImageModal);
         imageModal.addEventListener('click', (e) => { if (e.target === imageModal) closeImageModal(); });
         document.addEventListener('keydown', (e)=>{ if(imageModal.classList.contains('active') && e.key==='Escape'){ closeImageModal(); }});
       };
 
-      /* Formulario contacto */
+      /* Formulario contacto con validación básica */
       const handleContactForm = () => {
         const form = document.getElementById('contact-form');
         if (!form) return;
         const previewBtn = document.getElementById('preview-btn');
+
+        const validEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 
         const buildMailtoLink = () => {
           const name = form.nombre.value.trim();
@@ -713,10 +767,10 @@
           return `mailto:eduardo@officequest.net?subject=${encodeURIComponent("Cafecito — Portafolio")}&body=${encodeURIComponent(body)}`;
         };
 
-        const validEmail = (e) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
-
         previewBtn.addEventListener('click', () => {
-          if (!form.nombre.value.trim() || !form.email.value.trim() || !validEmail(form.email.value.trim())) { alert('Completa nombre y un email válido.'); return; }
+          const name = form.nombre.value.trim();
+          const email = form.email.value.trim();
+          if (!name || !validEmail(email)) { alert('Completa nombre y un email válido.'); return; }
           window.location.href = buildMailtoLink();
         });
 
@@ -724,22 +778,22 @@
           e.preventDefault();
           const name = form.nombre.value.trim();
           const email = form.email.value.trim();
-          if (!name || !email || !validEmail(email)) { alert('Completa nombre y un email válido.'); return; }
+          if (!name || !validEmail(email)) { alert('Completa nombre y un email válido.'); return; }
           window.location.href = buildMailtoLink();
         });
       };
 
-      /* Evitar saltos de enlaces "#" sin controlador explícito */
+      /* Evitar saltos de enlaces "#" sin controlador */
       document.addEventListener('click', (e) => {
         const a = e.target.closest && e.target.closest('a[href="#"]');
         if (a) e.preventDefault();
       });
 
-      /* Konami (normalizado a lowercase) */
+      /* Konami funcional (normalizado) */
       const handleKonamiCode = () => {
         const seq = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
         let i = 0;
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener('keydown', e => {
           const k = e.key.toLowerCase();
           i = (k === seq[i]) ? i + 1 : (k === seq[0] ? 1 : 0);
           if (i === seq.length) {
